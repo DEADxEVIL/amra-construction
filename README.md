@@ -2,6 +2,8 @@
 
 Premium construction and architectural services website for **AMRA Construction & Design Solutions Pvt Ltd**, Purnea, Bihar.
 
+![AMRA Construction Website](.github/assets/website-preview.png)
+
 ## Live Website
 
 https://amra-construction.hacker09.workers.dev
