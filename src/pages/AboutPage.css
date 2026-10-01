@@ -1,0 +1,135 @@
+.about-page {
+  overflow: hidden;
+}
+
+.about-page__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.about-page__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  min-width: 0;
+}
+
+.about-page__body p {
+  margin: 0;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.about-page__lead {
+  font-size: var(--body-lg);
+  line-height: 1.65 !important;
+  color: var(--text);
+}
+
+.about-page__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-page__stats li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.about-page__stat-value {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.about-page__stat-label {
+  min-width: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .about-page__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-page__stats {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .about-page__grid {
+    gap: 2rem;
+  }
+
+  .about-page__body {
+    gap: 1rem;
+  }
+
+  .about-page__lead {
+    font-size: 1rem;
+  }
+
+  .about-page__stats li {
+    padding: 1.1rem 0;
+    gap: 0.75rem;
+  }
+
+  .about-page__stat-value {
+    font-size: 1.9rem;
+  }
+
+  .about-page__stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .about-page__grid {
+    gap: 1.75rem;
+  }
+
+  .about-page__lead {
+    font-size: 0.94rem;
+  }
+
+  .about-page__body p {
+    font-size: 0.88rem;
+  }
+
+  .about-page__stats li {
+    padding: 1rem 0;
+  }
+
+  .about-page__stat-value {
+    font-size: 1.7rem;
+  }
+
+  .about-page__stat-label {
+    font-size: 0.7rem;
+  }
+}

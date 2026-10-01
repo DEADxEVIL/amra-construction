@@ -1,0 +1,34 @@
+.footer {
+  padding: 2rem 0 1.5rem;
+  border-top: 1px solid var(--line);
+  background: rgba(7, 12, 17, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__credit {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.footer__name {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 1.5rem 0 1rem;
+  }
+  .footer__credit {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,158 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.about__title {
+  margin-top: 1.2rem;
+  font-size: var(--h2);
+  max-width: 12ch;
+  line-height: 1.08;
+}
+
+.about__body {
+  padding: 2rem;
+  background: rgba(12, 18, 24, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-width: 0;
+}
+
+.about__text {
+  font-size: var(--body-lg);
+  max-width: 56ch;
+}
+
+.about__text + .about__text {
+  margin-top: 1.2rem;
+}
+
+.about__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  min-height: 44px;
+  color: var(--gold);
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--dur-fast) var(--ease-architectural),
+    opacity var(--dur-fast) var(--ease-architectural);
+}
+
+.about__link:hover {
+  border-color: var(--gold);
+}
+
+.about__link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about__title {
+    max-width: 18ch;
+  }
+
+  .about__body {
+    padding: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .about__grid {
+    gap: 1.75rem;
+  }
+
+  .about__title {
+    margin-top: 1rem;
+    max-width: 100%;
+    font-size: clamp(2rem, 8.5vw, 3rem);
+    line-height: 1.08;
+  }
+
+  .about__body {
+    padding: 1.25rem;
+  }
+
+  .about__text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .about__text + .about__text {
+    margin-top: 1rem;
+  }
+
+  .about__link {
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .about__grid {
+    gap: 1.5rem;
+  }
+
+  .about__title {
+    font-size: clamp(1.85rem, 8.8vw, 2.5rem);
+  }
+
+  .about__body {
+    padding: 1.1rem;
+  }
+
+  .about__text {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .about__link {
+    margin-top: 1.25rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .about__body {
+    padding: 1rem;
+  }
+
+  .about__title {
+    font-size: 1.8rem;
+  }
+
+  .about__text {
+    font-size: 0.91rem;
+  }
+}

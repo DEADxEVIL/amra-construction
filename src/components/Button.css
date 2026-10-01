@@ -1,0 +1,40 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.6rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  background: var(--surface-soft);
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  transition: background var(--dur-fast) var(--ease-architectural),
+    border-color var(--dur-fast) var(--ease-architectural),
+    color var(--dur-fast) var(--ease-architectural);
+}
+
+.btn__icon {
+  transition: transform var(--dur-fast) var(--ease-architectural);
+}
+
+.btn:hover .btn__icon {
+  transform: translate(3px, -2px);
+}
+
+.btn--primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #10151b;
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.btn--secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}

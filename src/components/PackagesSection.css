@@ -1,0 +1,101 @@
+.packages-section__header {
+  max-width: 60ch;
+  margin-bottom: 3rem;
+}
+
+.packages-section__title {
+  margin-top: 1rem;
+  font-size: var(--h2);
+  line-height: 1.08;
+}
+
+.packages-section__sub {
+  margin-top: 1rem;
+  font-size: var(--body-lg);
+  line-height: 1.65;
+}
+
+.packages-section__highlight {
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .packages-section__header {
+    max-width: 65ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .packages-section__title {
+    max-width: 18ch;
+  }
+
+  .packages-section__sub {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .packages-section__header {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .packages-section__title {
+    max-width: 100%;
+    margin-top: 0.9rem;
+    font-size: clamp(2rem, 8.5vw, 3rem);
+    line-height: 1.08;
+  }
+
+  .packages-section__sub {
+    margin-top: 0.9rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .packages-section__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .packages-section__title {
+    font-size: clamp(1.85rem, 8.8vw, 2.5rem);
+  }
+
+  .packages-section__sub {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .packages-section__title {
+    font-size: 1.8rem;
+  }
+
+  .packages-section__sub {
+    font-size: 0.88rem;
+  }
+}

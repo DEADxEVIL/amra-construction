@@ -1,0 +1,197 @@
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 2.2rem 1.9rem 2.6rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition:
+    border-color var(--dur-med) var(--ease-architectural),
+    background var(--dur-med) var(--ease-architectural),
+    transform var(--dur-med) var(--ease-architectural);
+}
+
+.service-card:hover {
+  border-color: var(--gold-dim);
+  background: var(--surface-strong);
+  transform: translateY(-4px);
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.service-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+
+.service-card__number {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.service-card__icon {
+  flex: 0 0 auto;
+  color: var(--gold);
+}
+
+.service-card__title {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
+}
+
+.service-card__summary {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.service-card__arrow {
+  margin-top: auto;
+  align-self: flex-end;
+  padding-top: 1.4rem;
+  color: var(--text-muted);
+  transition:
+    color var(--dur-fast) var(--ease-architectural),
+    transform var(--dur-fast) var(--ease-architectural);
+}
+
+.service-card:hover .service-card__arrow {
+  color: var(--gold);
+  transform: translate(3px, -2px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .service-card {
+    padding: 2rem 1.6rem 2.3rem;
+  }
+
+  .service-card__top {
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .service-card {
+    padding: 1.5rem 1.25rem 1.7rem;
+  }
+
+  .service-card__top {
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card__number {
+    font-size: 1.15rem;
+  }
+
+  .service-card__title {
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card__summary {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .service-card__arrow {
+    padding-top: 1.15rem;
+  }
+
+  /* Avoid desktop hover movement on touch devices. */
+  .service-card:hover {
+    transform: none;
+  }
+
+  .service-card:active {
+    border-color: var(--gold-dim);
+    background: var(--surface-strong);
+  }
+
+  .service-card:hover .service-card__arrow {
+    transform: none;
+  }
+
+  .service-card:active .service-card__arrow {
+    color: var(--gold);
+    transform: translate(2px, -1px);
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: 1.35rem 1.1rem 1.55rem;
+  }
+
+  .service-card__top {
+    margin-bottom: 1.1rem;
+  }
+
+  .service-card__number {
+    font-size: 1.08rem;
+  }
+
+  .service-card__title {
+    font-size: 1.08rem;
+  }
+
+  .service-card__summary {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .service-card__arrow {
+    padding-top: 1rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .service-card {
+    padding: 1.2rem 1rem 1.45rem;
+  }
+
+  .service-card__title {
+    font-size: 1.02rem;
+  }
+
+  .service-card__summary {
+    font-size: 0.86rem;
+  }
+}

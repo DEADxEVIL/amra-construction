@@ -1,0 +1,255 @@
+/* ---- Service Detail Hero ---- */
+
+.service-detail-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-detail-hero__grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.service-detail-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-architectural);
+}
+
+.service-detail-hero__back:hover {
+  color: var(--text);
+}
+
+.service-detail-hero__top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail-hero__number {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.service-detail-hero__icon {
+  flex: 0 0 auto;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+/* ---- Body ---- */
+
+.service-detail__body {
+  width: 100%;
+  max-width: 56ch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 0 2rem;
+}
+
+.service-detail__desc {
+  margin: 0;
+  font-size: var(--body-lg);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ---- Related Services ---- */
+
+.service-detail__related {
+  border-top: 1px solid var(--line);
+  padding-top: 3rem;
+}
+
+.service-detail__related-title {
+  margin: 0 0 2rem;
+  font-size: var(--h3);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.service-detail__related-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.service-detail__related-list li {
+  min-width: 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.service-detail__related-list a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem 0;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition:
+    color var(--dur-fast) var(--ease-architectural),
+    padding-left var(--dur-fast) var(--ease-architectural);
+}
+
+.service-detail__related-list a:hover {
+  color: var(--text);
+  padding-left: 0.5rem;
+}
+
+.service-detail__related-list a span {
+  flex: 0 0 auto;
+  min-width: 2.2rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.service-detail__related-list a:hover span {
+  color: var(--gold);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .service-detail__related-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  .service-detail__related {
+    padding-top: 2.5rem;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 767px) {
+  .service-detail-hero__back {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .service-detail-hero__top {
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .service-detail-hero__number {
+    font-size: 1.8rem;
+  }
+
+  .service-detail-hero__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .service-detail__body {
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .service-detail__desc {
+    font-size: var(--body);
+    line-height: 1.65;
+  }
+
+  .service-detail__related {
+    padding-top: 2rem;
+  }
+
+  .service-detail__related-title {
+    margin-bottom: 1.25rem;
+  }
+
+  .service-detail__related-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .service-detail__related-list a {
+    padding: 0.9rem 0;
+  }
+}
+
+/* ---- Small phones ---- */
+
+@media (max-width: 480px) {
+  .service-detail-hero__back {
+    margin-bottom: 1.25rem;
+  }
+
+  .service-detail-hero__top {
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-detail-hero__number {
+    font-size: 1.6rem;
+  }
+
+  .service-detail-hero__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service-detail__desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .service-detail__related-title {
+    margin-bottom: 1rem;
+  }
+
+  .service-detail__related-list a {
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .service-detail__related-list a span {
+    min-width: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---- Very small phones ---- */
+
+@media (max-width: 380px) {
+  .service-detail__desc {
+    font-size: 0.88rem;
+  }
+
+  .service-detail__related-list a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---- Touch devices ---- */
+
+@media (hover: none) {
+  .service-detail__related-list a:hover {
+    padding-left: 0;
+  }
+}

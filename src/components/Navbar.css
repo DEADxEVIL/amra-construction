@@ -1,0 +1,344 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  width: 100%;
+  background: rgba(7, 12, 17, 0.16);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background var(--dur-fast) var(--ease-architectural),
+    border-color var(--dur-fast) var(--ease-architectural),
+    box-shadow var(--dur-fast) var(--ease-architectural);
+}
+
+.navbar--scrolled {
+  background: rgba(7, 12, 17, 0.78);
+  border-bottom-color: var(--line);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+}
+
+.navbar__inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar__logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 150px;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.navbar__brand-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+}
+
+.navbar__wordmark {
+  display: block;
+  width: 116px;
+  height: 34px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.navbar__seal {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.navbar__logo-sub {
+  display: block;
+  margin-top: 5px;
+  margin-left: 1px;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  line-height: 1;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.35rem, 2.15vw, 2.35rem);
+  margin-left: auto;
+}
+
+.navbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.25rem 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-architectural);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--dur-fast) var(--ease-architectural);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--text);
+}
+
+.navbar__link--active::after {
+  transform: scaleX(1);
+}
+
+.navbar__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.navbar__phone:hover {
+  color: var(--text);
+}
+
+/* ─── WhatsApp icon ─── */
+.navbar__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: color var(--dur-fast) var(--ease-architectural);
+  text-decoration: none;
+}
+
+.navbar__whatsapp:hover {
+  color: #25D366;
+}
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--gold);
+  color: var(--text);
+  background: rgba(7, 12, 17, 0.14);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background var(--dur-fast) var(--ease-architectural),
+    color var(--dur-fast) var(--ease-architectural);
+}
+
+.navbar__cta:hover {
+  color: #10151b;
+  background: var(--gold);
+}
+
+.navbar__burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: rgba(7, 12, 17, 0.34);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.navbar__burger:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+@media (max-width: 1180px) {
+  .navbar__links {
+    gap: 1.15rem;
+  }
+
+  .navbar__phone span {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar__links,
+  .navbar__phone,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__whatsapp {
+    display: inline-flex;
+  }
+
+  .navbar__burger {
+    display: inline-flex;
+  }
+
+  /* Keep mobile/tablet actions pinned to the far right. */
+  .navbar__actions {
+    margin-left: auto;
+    gap: 0.65rem;
+  }
+
+  .navbar__whatsapp {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  .navbar__inner {
+    min-height: 76px;
+  }
+
+  .navbar__wordmark {
+    width: 104px;
+    height: 32px;
+  }
+
+  .navbar__seal {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+  }
+
+  .navbar__brand-row {
+    height: 32px;
+  }
+
+  .navbar__logo-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    background: rgba(7, 12, 17, 0.5);
+  }
+
+  .navbar--scrolled {
+    background: rgba(7, 12, 17, 0.84);
+  }
+
+  .navbar__inner {
+    min-height: 70px;
+  }
+
+  .navbar__logo {
+    min-width: 0;
+  }
+
+  .navbar__wordmark {
+    width: 92px;
+    height: 29px;
+  }
+
+  .navbar__seal {
+    width: 22px;
+    height: 22px;
+    flex-basis: 22px;
+  }
+
+  .navbar__brand-row {
+    height: 29px;
+    gap: 6px;
+  }
+
+  .navbar__logo-sub {
+    margin-top: 4px;
+    font-size: 0.52rem;
+    letter-spacing: 0.28em;
+  }
+
+  .navbar__actions {
+    margin-left: auto;
+    gap: 0.5rem;
+  }
+
+  .navbar__whatsapp {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .navbar__burger {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar__wordmark {
+    width: 82px;
+    height: 27px;
+  }
+
+  .navbar__seal {
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+
+  .navbar__inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar__link,
+  .navbar__link::after {
+    transition: none;
+  }
+}

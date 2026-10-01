@@ -1,0 +1,347 @@
+.project-carousel {
+  position: relative;
+}
+
+.project-carousel__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-carousel__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-carousel__title {
+  font-size: var(--h2);
+  line-height: 1.08;
+  color: var(--text);
+}
+
+.project-carousel__track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(7, 16, 24, 0.6);
+  border: 1px solid var(--line);
+}
+
+.project-carousel__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.project-carousel__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(1.1);
+}
+
+.project-carousel__content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  max-width: min(70%, 520px);
+  background: rgba(7, 16, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--gold);
+}
+
+.project-carousel__name {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+
+.project-carousel__location {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.project-carousel__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.2rem;
+  transition:
+    color var(--dur-fast) var(--ease-architectural),
+    border-color var(--dur-fast) var(--ease-architectural);
+  text-decoration: none;
+}
+
+.project-carousel__link:hover {
+  color: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+.project-carousel__link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.project-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(7, 16, 24, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--dur-fast) var(--ease-architectural),
+    border-color var(--dur-fast) var(--ease-architectural);
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.project-carousel__arrow:hover {
+  background: rgba(7, 16, 24, 0.85);
+  border-color: var(--gold-dim);
+}
+
+.project-carousel__arrow:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.project-carousel__arrow--prev {
+  left: 1rem;
+}
+
+.project-carousel__arrow--next {
+  right: 1rem;
+}
+
+.project-carousel__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.project-carousel__dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  transition:
+    background var(--dur-fast) var(--ease-architectural),
+    border-color var(--dur-fast) var(--ease-architectural),
+    transform var(--dur-fast) var(--ease-architectural);
+  cursor: pointer;
+}
+
+.project-carousel__dot:hover {
+  transform: scale(1.15);
+}
+
+.project-carousel__dot:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.project-carousel__dot--active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .project-carousel__content {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    max-width: min(72%, 480px);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .project-carousel__name {
+    font-size: 1.4rem;
+  }
+
+  .project-carousel__arrow--prev {
+    left: 0.75rem;
+  }
+
+  .project-carousel__arrow--next {
+    right: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .project-carousel__inner {
+    gap: 1.5rem;
+  }
+
+  .project-carousel__title {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+  }
+
+  .project-carousel__track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-carousel__content {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+    padding: 0.95rem 1.1rem;
+    border-left-width: 2px;
+  }
+
+  .project-carousel__name {
+    font-size: 1.2rem;
+  }
+
+  .project-carousel__location {
+    font-size: 0.82rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .project-carousel__link {
+    min-height: 42px;
+    font-size: 0.78rem;
+  }
+
+  .project-carousel__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-carousel__arrow--prev {
+    left: 0.65rem;
+  }
+
+  .project-carousel__arrow--next {
+    right: 0.65rem;
+  }
+
+  .project-carousel__dots {
+    margin-top: 0.75rem;
+    gap: 0.55rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .project-carousel__inner {
+    gap: 1.25rem;
+  }
+
+  .project-carousel__title {
+    font-size: clamp(1.85rem, 8.8vw, 2.5rem);
+  }
+
+  .project-carousel__track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-carousel__content {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .project-carousel__name {
+    font-size: 1.05rem;
+  }
+
+  .project-carousel__location {
+    font-size: 0.76rem;
+  }
+
+  .project-carousel__link {
+    min-height: 40px;
+    font-size: 0.74rem;
+  }
+
+  .project-carousel__arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .project-carousel__arrow--prev {
+    left: 0.5rem;
+  }
+
+  .project-carousel__arrow--next {
+    right: 0.5rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .project-carousel__title {
+    font-size: 1.8rem;
+  }
+
+  .project-carousel__content {
+    bottom: 0.6rem;
+    left: 0.6rem;
+    right: 0.6rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .project-carousel__name {
+    font-size: 1rem;
+  }
+
+  .project-carousel__location {
+    font-size: 0.72rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .project-carousel__link {
+    min-height: 38px;
+  }
+
+  .project-carousel__arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
